@@ -1,0 +1,23 @@
+{% extends "AppEntrega/padre.html" %}
+
+{% block ContenidoQueCambia %}
+
+<p> Estamos buscando al doctor : {{apellido}} </p>
+
+{% if Medicos%}
+
+
+<ul>
+{% for Medicos in Medicos%}
+    <li> {{Medicos.nombre}} </li>
+    <li> {{Medicos.apellido}} </li>
+    <li> {{Medicos.email}} </li>
+{% endfor %}
+</ul>
+
+{% else %}
+<p style="color: red;"> No hay médicos con ese apellido. </p>
+
+{% endif %}
+
+{% endblock ContenidoQueCambia %}

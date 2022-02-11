@@ -24,7 +24,7 @@ def Especialidades (request):
     espFormulario = especialidadesformulario()
     return render(request, 'AppEntrega/especialidades.html', {"espFormulario": espFormulario})
 
-def Médicos (request):
+def Medicos (request):
     if request.method == 'POST':
         medFormulario = medicosformulario(request.POST)
         print(medFormulario)
@@ -63,16 +63,19 @@ def Pacientes(request):
     miFormulario = pacientesformulario()
     return render(request, 'AppEntrega/pacientes.html', {"miFormulario": miFormulario})
     
-def busquedamedico(request):
-    return render(request, "AppEntrega/busquedamedico.html")
+
 
 def buscar(request):
-    if request.GET["medico"]:
-        resultadomedico = request.GET['medico']
-        medicos = Medico.objects.filter(apellido__icontains=resultadomedico)
-        return render(request, "AppEntrega/busquedamedico.html", {"medico": medicos} )
+    if request.GET['apellido']:
+
+        apellido = request.GET['apellido']
+        Medicos = Medico.objects.filter(apellido__icontains=apellido)
+        return render(request, "AppEntrega/resultadobusqueda.html", {"medico": Medicos} )
 
     else:
-        error= "No enviaste datos"
+        error= "No se enviaron datos"
 
-    return render(request, "AppEntrega/busquedamedico.html", {"error": error} )
+    return render(request, "AppEntrega/resultadobusqueda.html", {"error": error} )
+
+def busquedamedico(request):
+    return render(request, "AppEntrega/busquedamedico.html")
