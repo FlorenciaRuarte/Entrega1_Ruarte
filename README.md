@@ -20,3 +20,4 @@ Permite buscar en la BD a un médico por apellido.
 
 # Visualización
 
+(https://github.com/FlorenciaRuarte/Entrega1_Ruarte/blob/master/Captura.JPG)
