@@ -1,5 +1,13 @@
 {% extends "AppEntrega/padre.html" %}
 
 {% block ContenidoQueCambia %}
-medicos
+
+<h5> Cargá tus datos: </h5>
+<form action="" method="POST" >{% csrf_token %}
+    <table>
+        {{ medFormulario.as_table }}
+    </table>
+    <input type="submit" value="Enviar" />
+</form>
+ 
 {% endblock ContenidoQueCambia %}

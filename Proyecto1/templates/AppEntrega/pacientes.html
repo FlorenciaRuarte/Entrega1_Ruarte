@@ -1,5 +1,17 @@
 {% extends "AppEntrega/padre.html" %}
 
 {% block ContenidoQueCambia %}
-pacientes
+
+<h5> Cargá tus datos: </h5>
+<form action="" method="POST" >{% csrf_token %}
+    <table>
+        {{ miFormulario.as_table }}
+    </table>
+    <div class="container position-relative">
+        
+    <input type="submit" value="Enviar" />
+
+
+</form>
+
 {% endblock ContenidoQueCambia %}

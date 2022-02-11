@@ -1,5 +1,12 @@
 {% extends "AppEntrega/padre.html" %}
 
 {% block ContenidoQueCambia %}
-ESPECIALIDADES CAMBIO
+<h5> Cargá los datos: </h5>
+<form action="" method="POST" >{% csrf_token %}
+    <table>
+        {{ espFormulario.as_table }}
+    </table>
+    <input type="submit" value="Enviar" />
+</form>
+ 
 {% endblock ContenidoQueCambia %}

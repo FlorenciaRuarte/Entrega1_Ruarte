@@ -22,7 +22,7 @@ def Especialidades (request):
             especialidad.save()
     
     espFormulario = especialidadesformulario()
-    return render(request, 'AppEntrega/especialidadesformulario.html', {"espFormulario": espFormulario})
+    return render(request, 'AppEntrega/especialidades.html', {"espFormulario": espFormulario})
 
 def Médicos (request):
     if request.method == 'POST':
@@ -40,7 +40,7 @@ def Médicos (request):
             medico.save()
     
     medFormulario = medicosformulario()
-    return render(request, 'AppEntrega/medicosformulario.html', {"medFormulario": medFormulario})
+    return render(request, 'AppEntrega/medicos.html', {"medFormulario": medFormulario})
 
 
 
@@ -61,7 +61,7 @@ def Pacientes(request):
             paciente.save()
     
     miFormulario = pacientesformulario()
-    return render(request, 'AppEntrega/pacientesformulario.html', {"miFormulario": miFormulario})
+    return render(request, 'AppEntrega/pacientes.html', {"miFormulario": miFormulario})
     
 def busquedamedico(request):
     return render(request, "AppEntrega/busquedamedico.html")
