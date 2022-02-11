@@ -1,0 +1,30 @@
+{% extends "AppEntrega/padre.html" %}
+
+{% block ContenidoQueCambia %}
+
+<h1> Buscá tu médico por apellido: </h1>
+<form action="/AppEntrega/buscar/" method="GET" >
+
+     <input type="text", name="medico" id="medico" >
+     <input type="submit" value= "Buscar">
+
+
+</form>
+
+{% if nombre_medico%}
+<p> Estamos buscando al doctor : {{medico}} </p>
+
+<ul>
+{% for medico in medicos%}
+    <li> {{medico.nombre}} </li>
+    <li> {{medico.apellido}} </li>
+    <li> {{medico.email}} </li>
+{% endfor %}
+</ul>
+
+{% else %}
+<p> No hay médicos con ese apellido. </p>
+
+{% endif %}
+
+{% endblock ContenidoQueCambia %}
